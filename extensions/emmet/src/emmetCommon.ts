@@ -7,7 +7,7 @@ import * as vscode from 'vscode';
 import { DefaultCompletionItemProvider } from './defaultCompletionProvider';
 import { expandEmmetAbbreviation, wrapWithAbbreviation, wrapIndividualLinesWithAbbreviation } from './abbreviationActions';
 import { removeTag } from './removeTag';
-import { updateTag } from './updateTag';
+import { updateTag } from './updateTagButNewer';
 import { matchTag } from './matchTag';
 import { balanceOut, balanceIn } from './balance';
 import { splitJoinTag } from './splitJoinTag';

@@ -44,6 +44,7 @@ function getRangesToUpdate(editor: vscode.TextEditor, selection: vscode.Selectio
 		let closeEnd = nodeToUpdate.close.end.translate(0, -1);
 		ranges.push(new vscode.Range(closeStart, closeEnd));
 	}
+	console.log(ranges);
 	return ranges;
 }
 
