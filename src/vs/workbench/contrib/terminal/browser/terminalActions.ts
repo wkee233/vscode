@@ -1423,7 +1423,8 @@ export function registerTerminalActions() {
 			});
 		}
 		run(accessor: ServicesAccessor) {
-			const query = accessor.get(ITerminalService).getActiveInstance()?.selection;
+			const activeInstance = accessor.get(ITerminalService).getActiveInstance();
+			const query = activeInstance?.selection;
 			FindInFilesCommand(accessor, { query } as IFindInFilesArgs);
 		}
 	});
