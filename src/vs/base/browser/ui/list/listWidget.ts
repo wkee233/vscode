@@ -1159,7 +1159,9 @@ export class List<T> implements ISpliceable<T>, IThemable, IDisposable {
 		const fromKeyup = Event.chain(domEvent(this.view.domNode, 'keyup'))
 			.filter(() => {
 				const didJustPressContextMenuKey = this.didJustPressContextMenuKey;
-				this.didJustPressContextMenuKey = false;
+				if (didJustPressContextMenuKey) {
+					setTimeout(() => this.didJustPressContextMenuKey = false, 10);
+				}
 				return didJustPressContextMenuKey;
 			})
 			.filter(() => this.getFocus().length > 0 && !!this.view.domElement(this.getFocus()[0]))
